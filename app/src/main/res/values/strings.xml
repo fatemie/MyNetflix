@@ -2,4 +2,17 @@
     <string name="app_name">MyNetflix</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="setInfo">اطلاعات خود را وارد کنید</string>
+    <string name="name">نام و نام خانوادگی</string>
+    <string name="phone">شماره تلفن</string>
+    <string name="bornDate">تاریخ تولد</string>
+    <string name="gender">جنسیت</string>
+    <string name="female">زن</string>
+    <string name="male">مرد</string>
+    <string name="register">ثبت اطلاعات</string>
+    <string name="editButton">تغییر اطلاعات</string>
+    <string name="newUser">ورود کاربر جدید</string>
+    <string name="nameFilm1">موقعیت مهدی</string>
+    <string name="userName">نام کاربری</string>
+    <string name="email">ایمیل</string>
 </resources>

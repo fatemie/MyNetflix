@@ -6,6 +6,8 @@ import android.os.Parcel
 import android.os.Parcelable
 import android.view.Menu
 import android.view.MenuInflater
+import android.view.MenuItem
+import androidx.navigation.fragment.findNavController
 
 class MainActivity() : AppCompatActivity() {
 
@@ -19,4 +21,6 @@ class MainActivity() : AppCompatActivity() {
         inflater.inflate(R.menu.menu, menu)
         return true
     }
+
+
 }

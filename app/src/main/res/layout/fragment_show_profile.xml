@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ShowProfileFragment">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="8dp"
+        android:orientation="vertical">
+
+
+        <TextView
+            android:id="@+id/textViewStartShowInfo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="اطلاعات ثبت شده"
+            android:background="@color/third"
+            android:textSize="20sp"
+            android:layout_margin="12dp" />
+
+        <TextView
+            android:id="@+id/textViewName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/name"
+            android:background="@color/forth"
+            android:textSize="20sp"
+            android:layout_margin="12dp" />
+
+        <TextView
+            android:id="@+id/textViewUserName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/userName"
+            android:background="@color/forth"
+            android:textSize="20sp"
+            android:layout_margin="12dp" />
+
+        <TextView
+            android:id="@+id/textViewEmail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/email"
+            android:background="@color/forth"
+            android:textSize="20sp"
+            android:layout_margin="12dp" />
+
+        <TextView
+            android:id="@+id/textViewPhone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/phone"
+            android:background="@color/forth"
+            android:textSize="20sp"
+            android:layout_margin="12dp" />
+
+        <TextView
+            android:id="@+id/textViewBornDate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/bornDate"
+            android:background="@color/forth"
+            android:textSize="20sp"
+            android:layout_margin="12dp" />
+
+        <Button
+            android:id="@+id/buttonEdit"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/editButton"
+            android:backgroundTint="@color/first"/>
+
+        <Button
+            android:id="@+id/button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/newUser"
+            android:backgroundTint="@color/third"/>
+
+
+    </LinearLayout>
+
+</FrameLayout>
