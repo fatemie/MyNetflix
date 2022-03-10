@@ -9,10 +9,15 @@
     <string name="gender">جنسیت</string>
     <string name="female">زن</string>
     <string name="male">مرد</string>
-    <string name="register">ثبت اطلاعات</string>
     <string name="editButton">تغییر اطلاعات</string>
     <string name="newUser">ورود کاربر جدید</string>
-    <string name="nameFilm1">موقعیت مهدی</string>
+    <string name="nameFilm1">علفزار</string>
     <string name="userName">نام کاربری</string>
     <string name="email">ایمیل</string>
+    <string name="register">ثبت اطلاعات</string>
+    <string name="nameFilm2">موقعیت مهدی</string>
+    <string name="nameFilm3">بدون قرار قبلی</string>
+    <string name="nameFilm4">درخت گردو</string>
+    <string name="nameFilm5">نگهبان شب</string>
+    <string name="nameFilm6">شب طلایی</string>
 </resources>

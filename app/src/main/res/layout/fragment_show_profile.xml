@@ -70,15 +70,9 @@
             android:id="@+id/buttonEdit"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/editButton"
+            android:text="@string/register"
             android:backgroundTint="@color/first"/>
 
-        <Button
-            android:id="@+id/button"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/newUser"
-            android:backgroundTint="@color/third"/>
 
 
     </LinearLayout>

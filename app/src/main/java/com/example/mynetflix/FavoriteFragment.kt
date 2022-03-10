@@ -35,7 +35,16 @@ class FavoriteFragment : Fragment() {
         var count = 0
         for(number in Favorite.numberOfFavoriteFilm){
             txtViewArray[count].text = Favorite.titleOfFilm[number]
-            imgViewArray[count].setImageResource(R.drawable.poster)
+            var pic = when(number){
+                0 -> R.drawable.poster_mahdi
+                1 -> R.drawable.poster_alafzar
+                2 -> R.drawable.poster_gerdoo
+                3 -> R.drawable.poster_gharar
+                4 -> R.drawable.poster_negahban
+                5 -> R.drawable.poster_shab
+                else -> R.drawable.poster_mahdi
+            }
+            imgViewArray[count].setImageResource(pic)
             count++
         }
 

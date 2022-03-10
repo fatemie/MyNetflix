@@ -10,8 +10,8 @@ import androidx.navigation.fragment.findNavController
 
 object Favorite{
     val numberOfFavoriteFilm : ArrayList<Int> = arrayListOf()
-    val titleOfFilm : ArrayList<String> = arrayListOf("فیلم 1","فیلم 2","فیلم 3","فیلم 4","فیلم 5",
-    "فیلم 6","فیلم 7","فیلم 8","فیلم 9","فیلم 10","فیلم 11","فیلم 12")
+    val titleOfFilm : ArrayList<String> = arrayListOf("علفزار","موقعیت مهدی","بدون قرار قبلی","درخت گردو","نگهبان شب",
+    "شب طلایی","فیلم 7","فیلم 8","فیلم 9","فیلم 10","فیلم 11","فیلم 12")
     var isSigneIn = false
 }
 
@@ -84,9 +84,6 @@ class HomeFragment : Fragment() {
             }
             R.id.favorite -> {
                 findNavController().navigate(R.id.action_homeFragment_to_favoriteFragment)
-                true
-            }
-            R.id.home -> {
                 true
             }
             R.id.comingSoon -> {

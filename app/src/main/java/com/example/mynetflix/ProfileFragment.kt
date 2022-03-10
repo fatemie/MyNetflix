@@ -12,6 +12,7 @@ import android.widget.Toast
 import androidx.activity.result.ActivityResult
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.os.bundleOf
 import androidx.navigation.fragment.findNavController
 import com.example.mynetflix.databinding.FragmentProfileBinding
 
@@ -52,8 +53,8 @@ class ProfileFragment : Fragment() {
     private fun setListener() {
         binding.buttonRegister.setOnClickListener {
             if(checkAllFieldComplete()){
-                seveInfo()
-                findNavController().navigate(R.id.action_profileFragment2_to_showProfileFragment)
+                sendInfo()
+//                findNavController().navigate(R.id.action_profileFragment2_to_showProfileFragment)
             }
         }
     }
@@ -91,9 +92,18 @@ class ProfileFragment : Fragment() {
         editor.putString(EMAIL, binding.editTextEmail.text.toString())
         editor.putString(BORNDATE, binding.editTextBornDate.text.toString())
         editor.putString(PHONE, binding.editTextPhone.text.toString())
-        editor.putBoolean(isSigneIn, true)
+        //editor.putBoolean(isSigneIn, true)
         Favorite.isSigneIn = true
         editor.apply()
+    }
+
+    fun sendInfo(){
+        val bundle = bundleOf(NAME to binding.editTextPersonName.text.toString(),
+                                USERNAME to binding.editTextUserName.text.toString(),
+                                EMAIL to binding.editTextEmail.text.toString(),
+                                BORNDATE to binding.editTextBornDate.text.toString(),
+                                PHONE to binding.editTextPhone.text.toString())
+        findNavController().navigate(R.id.action_profileFragment2_to_showProfileFragment, bundle)
     }
 
 
