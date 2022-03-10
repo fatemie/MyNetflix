@@ -1,5 +1,6 @@
 package com.example.mynetflix
 
+import android.app.Activity
 import android.content.SharedPreferences
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -8,6 +9,8 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.EditText
 import android.widget.Toast
+import androidx.activity.result.ActivityResult
+import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.fragment.findNavController
 import com.example.mynetflix.databinding.FragmentProfileBinding
@@ -34,17 +37,17 @@ class ProfileFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         prefs = requireActivity().getSharedPreferences(resources.getString(R.string.app_name),
             AppCompatActivity.MODE_PRIVATE)
-            checkSharedPreferenceEmpty()
+            //checkSharedPreferenceEmpty()
             setListener()
     }
 
-    fun checkSharedPreferenceEmpty(){
-        val name = prefs.getString(NAME,"")
-        if(!name.isNullOrEmpty()){
-
-            findNavController().navigate(R.id.action_profileFragment2_to_showProfileFragment)
-        }
-    }
+//    fun checkSharedPreferenceEmpty(){
+//        //val isSigned = prefs.getBoolean(isSigneIn,false)
+//        if(Favorite.isSigneIn){
+//            Favorite.isSigneIn = false
+//            findNavController().navigate(R.id.action_profileFragment2_to_showProfileFragment)
+//        }
+//    }
 
     private fun setListener() {
         binding.buttonRegister.setOnClickListener {
@@ -88,9 +91,10 @@ class ProfileFragment : Fragment() {
         editor.putString(EMAIL, binding.editTextEmail.text.toString())
         editor.putString(BORNDATE, binding.editTextBornDate.text.toString())
         editor.putString(PHONE, binding.editTextPhone.text.toString())
+        editor.putBoolean(isSigneIn, true)
+        Favorite.isSigneIn = true
         editor.apply()
     }
-
 
 
 }

@@ -16,6 +16,7 @@ const val BORNDATE = "BORNDATE"
 const val GENDER = "GENDER"
 const val EMAIL = "EMAIL"
 const val USERNAME = "USERNAME"
+const val isSigneIn = "isSigneIn"
 
 class ShowProfileFragment : Fragment() {
 
@@ -49,18 +50,5 @@ class ShowProfileFragment : Fragment() {
         binding.textViewBornDate.text = "تاریخ تولد: " + prefs.getString(BORNDATE,"")
     }
 
-//    fun goBackForEdit(){
-//        val result= Intent()
-//        result.putExtra(EDIT,true)
-//        setResult(AppCompatActivity.RESULT_OK,result)
-//        finish()
-//    }
-//
-//    fun goBackForEnterNewUser(){
-//        val result= Intent()
-//        result.putExtra(NEWUSER, true)
-//        setResult(AppCompatActivity.RESULT_OK,result)
-//        finish()
-//    }
 
 }
