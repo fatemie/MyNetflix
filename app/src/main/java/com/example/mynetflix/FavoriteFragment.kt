@@ -27,14 +27,17 @@ class FavoriteFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
       //  var title = requireArguments().getString("title")
        // var pic = requireArguments().getInt("poster")
-        for(title in Favorite.arrayTitle){
-            if(title != ""){
-                binding.textView1.text = title
-                binding.imageView1.setImageResource(R.drawable.poster)
-            }
-        }
-       // binding.imageView1.setImageResource(pic)
 
+        val txtViewArray = arrayListOf(binding.textView1,binding.textView2,binding.textView3
+                                        ,binding.textView4, binding.textView5)
+        val imgViewArray = arrayListOf(binding.imageView1,binding.imageView2,binding.imageView3
+                                    ,binding.imageView4,binding.imageView5)
+        var count = 0
+        for(number in Favorite.numberOfFavoriteFilm){
+            txtViewArray[count].text = Favorite.titleOfFilm[number]
+            imgViewArray[count].setImageResource(R.drawable.poster)
+            count++
+        }
 
     }
 
