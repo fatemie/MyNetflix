@@ -48,7 +48,6 @@ class ShowProfileFragment : Fragment() {
         prefs = requireActivity().getSharedPreferences(resources.getString(R.string.app_name),
             AppCompatActivity.MODE_PRIVATE)
         setInfo()
-
         binding.buttonEdit.setOnClickListener {
             saveInfo()
         }

@@ -7,6 +7,7 @@ import androidx.core.os.bundleOf
 import androidx.fragment.app.Fragment
 import com.example.mynetflix.databinding.FragmentHomeBinding
 import androidx.navigation.fragment.findNavController
+import android.view.MenuInflater
 
 object Favorite{
     val numberOfFavoriteFilm : ArrayList<Int> = arrayListOf()
@@ -17,11 +18,15 @@ object Favorite{
 
 class HomeFragment : Fragment() {
     lateinit var binding: FragmentHomeBinding
+    val btnArray = arrayListOf(binding.button1, binding.button2, binding.button3,binding.button4,
+        binding.button5,binding.button6,binding.button7,binding.button8,binding.button9,binding.button10,
+        binding.button11,binding.button12)
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setHasOptionsMenu(true)
     }
+
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -36,13 +41,12 @@ class HomeFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        initViews()
         setListener()
     }
 
-    fun setListener(){
-        val btnArray = arrayListOf(binding.button1, binding.button2, binding.button3,binding.button4,
-            binding.button5,binding.button6,binding.button7,binding.button8,binding.button9,binding.button10,
-            binding.button11,binding.button12)
+    fun initViews(){
+
 
         for (number in Favorite.numberOfFavoriteFilm) {
             for (countbtn in 0 until btnArray.size) {
@@ -51,7 +55,9 @@ class HomeFragment : Fragment() {
                 }
             }
         }
+    }
 
+    fun setListener(){
         for (count in 0 until btnArray.size){
             btnArray[count].setOnClickListener {
                 if(!Favorite.numberOfFavoriteFilm.contains(count) && Favorite.numberOfFavoriteFilm.size<6) {
@@ -92,6 +98,11 @@ class HomeFragment : Fragment() {
             }
             else -> super.onOptionsItemSelected(item)
         }
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
+        inflater.inflate(R.menu.menu, menu)
+        super.onCreateOptionsMenu(menu,inflater)
     }
 
 }
