@@ -20,11 +20,29 @@
             android:id="@+id/action_homeFragment_to_favoriteFragment"
             app:destination="@id/favoriteFragment" />
     </fragment>
+
     <fragment
         android:id="@+id/showProfileFragment"
         android:name="com.example.mynetflix.ShowProfileFragment"
         android:label="fragment_show_profile"
-        tools:layout="@layout/fragment_show_profile" />
+        tools:layout="@layout/fragment_show_profile" >
+        <argument
+            android:name="name"
+            app:argType="string" />
+        <argument
+            android:name="userName"
+            app:argType="string"/>
+        <argument
+            android:name="email"
+            app:argType="string" />
+        <argument
+            android:name="bornDate"
+            app:argType="string" />
+        <argument
+            android:name="phone"
+            app:argType="string" />
+    </fragment>
+
     <fragment
         android:id="@+id/profileFragment2"
         android:name="com.example.mynetflix.ProfileFragment"
@@ -34,7 +52,9 @@
             android:id="@+id/action_profileFragment2_to_showProfileFragment"
             app:destination="@id/showProfileFragment"
             app:popUpTo="@id/homeFragment" />
+
     </fragment>
+
     <fragment
         android:id="@+id/comingSoonFragment"
         android:name="com.example.mynetflix.ComingSoonFragment"

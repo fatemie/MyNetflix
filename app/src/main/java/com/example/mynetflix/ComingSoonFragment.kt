@@ -6,6 +6,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
 import android.widget.Toast
 import com.example.mynetflix.databinding.FragmentComingSoonBinding
 import com.example.mynetflix.databinding.FragmentHomeBinding
@@ -37,13 +38,7 @@ class ComingSoonFragment : Fragment() {
 
         binding.button1.setOnClickListener {
             if (Favorite.isSigneIn) {
-                val sendIntent: Intent = Intent().apply {
-                    action = Intent.ACTION_SEND
-                    putExtra(Intent.EXTRA_TEXT, "film1")
-                    type = "text/plain"
-                }
-                val shareIntent = Intent.createChooser(sendIntent, null)
-                startActivity(shareIntent)
+                share("film1")
             }else{
                 Toast.makeText(activity, "لطفا ابتدا اطلاعات خود را وارد کنید", Toast.LENGTH_SHORT).show()
             }
@@ -51,13 +46,7 @@ class ComingSoonFragment : Fragment() {
 
         binding.button2.setOnClickListener {
             if (Favorite.isSigneIn) {
-                val sendIntent: Intent = Intent().apply {
-                    action = Intent.ACTION_SEND
-                    putExtra(Intent.EXTRA_TEXT, "film2")
-                    type = "text/plain"
-                }
-                val shareIntent = Intent.createChooser(sendIntent, null)
-                startActivity(shareIntent)
+                share("film2")
             }else{
                 Toast.makeText(activity, "لطفا ابتدا اطلاعات خود را وارد کنید", Toast.LENGTH_SHORT).show()
             }
@@ -65,17 +54,29 @@ class ComingSoonFragment : Fragment() {
 
         binding.button3.setOnClickListener {
             if (Favorite.isSigneIn) {
-                val sendIntent: Intent = Intent().apply {
-                    action = Intent.ACTION_SEND
-                    putExtra(Intent.EXTRA_TEXT, "film3")
-                    type = "text/plain"
-                }
-                val shareIntent = Intent.createChooser(sendIntent, null)
-                startActivity(shareIntent)
+                share("film3")
             }else{
                 Toast.makeText(activity, "لطفا ابتدا اطلاعات خود را وارد کنید", Toast.LENGTH_SHORT).show()
             }
         }
+    }
+
+    fun setListener(){
+        val btnArray :ArrayList <Button> = arrayListOf(binding.button1,binding.button2,binding.button3)
+        for(btn in btnArray){
+            btn.setOnClickListener {
+            }
+        }
+
+    }
+    fun share(str : String){
+        val sendIntent: Intent = Intent().apply {
+            action = Intent.ACTION_SEND
+            putExtra(Intent.EXTRA_TEXT, str)
+            type = "text/plain"
+        }
+        val shareIntent = Intent.createChooser(sendIntent, null)
+        startActivity(shareIntent)
     }
 
 }

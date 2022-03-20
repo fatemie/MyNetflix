@@ -98,12 +98,21 @@ class ProfileFragment : Fragment() {
     }
 
     fun sendInfo(){
-        val bundle = bundleOf(NAME to binding.editTextPersonName.text.toString(),
-                                USERNAME to binding.editTextUserName.text.toString(),
-                                EMAIL to binding.editTextEmail.text.toString(),
-                                BORNDATE to binding.editTextBornDate.text.toString(),
-                                PHONE to binding.editTextPhone.text.toString())
-        findNavController().navigate(R.id.action_profileFragment2_to_showProfileFragment, bundle)
+//        val bundle = bundleOf(NAME to binding.editTextPersonName.text.toString(),
+//                                USERNAME to binding.editTextUserName.text.toString(),
+//                                EMAIL to binding.editTextEmail.text.toString(),
+//                                BORNDATE to binding.editTextBornDate.text.toString(),
+//                                PHONE to binding.editTextPhone.text.toString())
+//        findNavController().navigate(R.id.action_profileFragment2_to_showProfileFragment, bundle)
+
+        val name = binding.editTextPersonName.text.toString()
+        val userName = binding.editTextUserName.text.toString()
+        val email = binding.editTextEmail.text.toString()
+        val bornDate = binding.editTextBornDate.text.toString()
+        val phone = binding.editTextPhone.text.toString()
+
+        val action = ProfileFragmentDirections.actionProfileFragment2ToShowProfileFragment(name,userName, email, bornDate, phone)
+        findNavController().navigate(action)
     }
 
 

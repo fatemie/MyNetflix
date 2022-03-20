@@ -8,6 +8,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.appcompat.app.AppCompatActivity
+import androidx.navigation.fragment.navArgs
 import com.example.mynetflix.databinding.FragmentProfileBinding
 import com.example.mynetflix.databinding.FragmentShowProfileBinding
 import kotlin.math.E
@@ -24,6 +25,7 @@ class ShowProfileFragment : Fragment() {
 
     lateinit var binding : FragmentShowProfileBinding
     lateinit var prefs : SharedPreferences
+    val args : ShowProfileFragmentArgs by navArgs()
     lateinit var name : String
     lateinit var username : String
     lateinit var email : String
@@ -32,6 +34,13 @@ class ShowProfileFragment : Fragment() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        arguments.let {
+            name = it!!.getString("name").toString()
+            username = it.getString("userName").toString()
+            email = it.getString("email").toString()
+            borndate = it.getString("bornDate").toString()
+            phone = it.getString("phone").toString()
+        }
 
     }
 
@@ -55,11 +64,11 @@ class ShowProfileFragment : Fragment() {
 
     fun setInfo(){
 
-        name = requireArguments().getString(NAME).toString()
-        username = requireArguments().getString(USERNAME).toString()
-        email = requireArguments().getString(EMAIL).toString()
-        borndate = requireArguments().getString(BORNDATE).toString()
-        phone = requireArguments().getString(PHONE).toString()
+//        name = requireArguments().getString(NAME).toString()
+//        username = requireArguments().getString(USERNAME).toString()
+//        email = requireArguments().getString(EMAIL).toString()
+//        borndate = requireArguments().getString(BORNDATE).toString()
+//        phone = requireArguments().getString(PHONE).toString()
 
 //        var prefs = requireActivity().getSharedPreferences(resources.getString(R.string.app_name),
 //            AppCompatActivity.MODE_PRIVATE)
