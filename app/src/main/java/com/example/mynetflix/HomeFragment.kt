@@ -46,8 +46,6 @@ class HomeFragment : Fragment() {
     }
 
     fun initViews(){
-
-
         for (number in Favorite.numberOfFavoriteFilm) {
             for (countbtn in 0 until btnArray.size) {
                 if (countbtn == number){
@@ -62,7 +60,7 @@ class HomeFragment : Fragment() {
             btnArray[count].setOnClickListener {
                 if(!Favorite.numberOfFavoriteFilm.contains(count) && Favorite.numberOfFavoriteFilm.size<6) {
                     if(Favorite.isSigneIn) {
-                        btnArray[count].setIconTintResource(R.color.red)
+
                         Favorite.numberOfFavoriteFilm.add(count)
                     }else{
                         Toast.makeText(activity, "لطفا ابتدا اطلاعات خود را وارد کنید", Toast.LENGTH_SHORT).show()
